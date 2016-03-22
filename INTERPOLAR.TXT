@@ -1,0 +1,26 @@
+# Mitsubishi
+Programas Mitsubishi
+
+/INTERPOLAR
+
+G54 G90 G80 G40 G21 G17 ;
+G43 H1 Z200
+#1=10(RAIO) ;
+#2=2000(ACANCO)
+#3=1(PROFUNDIDADE) ;
+#4=.25(INCREMENTO) ;
+#5=0(ZINICIAL) ;
+#7=200(RETROCESSO) ;
+M3 S200 ;
+X0 Y0 ;
+M30 ;
+
+N10
+Z#5;
+G91 G41 D1 X#1 G1 F#2 ;
+G03 X0 Y0 I-#1 Z-#3 P#3/#4 ;
+G03 XYI-#1 F#2/3 ;
+G1 G40 X-#1 ;
+GG90 Z#7 ;
+M99 ;
+%
